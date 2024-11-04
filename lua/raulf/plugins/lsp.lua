@@ -11,6 +11,8 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
+        "mfussenegger/nvim-jdtls"
+
     },
 
     config = function()
@@ -28,6 +30,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
+                "jdtls"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -50,6 +53,9 @@ return {
                         }
                     }
                 end,
+
+                ["jdtls"] = function ()
+                end
             }
         })
 
