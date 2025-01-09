@@ -10,9 +10,12 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
+        "williamboman/mason.nvim"
     },
 
     config = function()
+        require("mason").setup()
+
         require("conform").setup({
             formatters_by_ft = {
             }
@@ -38,6 +41,11 @@ return {
 
         lspconfig.rust_analyzer.setup {
             cmd = { "rust-analyzer" },
+            capabilities = capabilities,
+        }
+
+        lspconfig.csharp_ls.setup {
+            cmd = { "csharp-ls" },
             capabilities = capabilities,
         }
 
