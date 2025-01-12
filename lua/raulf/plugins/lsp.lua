@@ -49,6 +49,11 @@ return {
             capabilities = capabilities,
         }
 
+        lspconfig.clangd.setup {
+            cmd = { "clangd" },
+            capabilities = capabilities,
+        }
+
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
